@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <img class="backgroundImg" src="./img/sky1.jpg">
+        <section class="input_area">
+            <button id="btn_close">
+                <img src="./img/arrow_down.png" alt="arrow down">
+            </button>
+            <div>
+                <label style="position: absolute; left: 15px; top: 8px;">Task :</label>
+                <input id="ipt_task" type="text">
+                <label style="position: absolute; left: 15px; top: 78px;">Priority :</label>
+                <div class="dropdown_container">
+                    <button id="btn_dropdownMenu" class="btn_dropdownMenu">
+                        <label id="lbl_btnDBMenu">Please Select</label>
+                        <img id="img_btnDBMenu" src="./img/arrow_down.png" alt="arrow down">
+                    </button>
+                    <div id="div_dropdownMenu" class="div_dropdownMenu">
+                        <button id="btn_dropdownItem1">High</button>
+                        <button id="btn_dropdownItem2">Middle</button>
+                        <button id="btn_dropdownItem3">Low</button>
+                    </div>
+                </div>
+                <button id="btn_add" >Add</button>
+            </div>
+        </section>
+        <section class="display_area">
+            <div id="div_list">
+                
+                <!-- <div class="card">
+                    <div class="content_left">
+                        <input class="checkbox" type="checkbox">
+                    </div>
+                    <div class="content_right">
+                        <div>
+                            <p class="text">text</p>
+                        </div>
+                        <hr>
+                        <div>
+                            <div class="tag">
+                                <label class="tag_name">High</label>
+                            </div>
+                            <div class="tag">
+                                <label class="tag_name">Middle</label>
+                            </div>
+                            <div class="tag">
+                                <label class="tag_name">Low</label>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+        <button id="btn_add2">
+            <img src="./img/add.png" alt="add">
+        </button>
+    </main>
+</body>
+</html>
