@@ -102,7 +102,7 @@ btn_add.addEventListener('click', () => {
         } else if(lbl_btnDBMenu.textContent === 'Low') {
             div_tag.classList.add('tag-color3');
         }
-        lbl_tagName.classList.add('.tag_name');
+        lbl_tagName.classList.add('tag_name');
 
         div_list.appendChild(div_card);
         div_card.appendChild(div_content_left);
