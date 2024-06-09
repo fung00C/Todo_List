@@ -66,7 +66,8 @@ main {
 
 #ipt_task {
     height: 30px;
-    width: 93%;
+    width: 93.7%;
+    padding: 0;
     margin-bottom: 30px;
     border-style: double;
     border-width: 4px;
@@ -156,7 +157,7 @@ main {
 #btn_add {
     height: 35px;
     width: 95%;
-    /* margin-bottom: 20px; */
+    padding: 0;
     border-style: double;
     border-width: 4px;
     border-color: #000000;
@@ -268,39 +269,34 @@ main {
     background-color: #6fff80;
 }
 
-.tag_name {
-
-}
+.tag_name { }
 
 #btn_add2 {
-    height: 50px;
-    width: 50px;
     display: none;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    border-style: solid;
-    border-width: 3px;
-    border-radius: 25px;
-    border-color: #000000;
-    background-color: #3498DB;
-    cursor: pointer;
-}
-
-#btn_add2:hover {
-    background-color: #4c6b80;
-}
-
-#btn_add2>img {
-    height: 25px;
-    width: 25px;
-    pointer-events: none;
 }
 
 #btn_close {
     display: none;
+}
+
+#div_notice {
+    height: 40px;
+    width: 200px;
+    border-radius: 20px;
+    background-color: #00000035;
+    display: none;
+    position: absolute;
+    z-index: 2;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+}
+
+.div_notice-show {
+    display: block !important;
 }
 
 @media only screen and (min-width: 530px) and (max-width: 930px) {
@@ -347,21 +343,6 @@ main {
         background-color: hwb(204 60% 1% / 0.9);
     }
     
-    #btn_close {
-        height: 30px;
-        width: 85%;
-        display: block;
-        background-color: transparent;
-        border-style: none;
-        cursor: pointer;
-    }
-            
-    #btn_close>img {
-        height: 20px;
-        width: 30px;
-        pointer-events: none
-    }
-
     .input_area>div {
         height: 230px;
         width: 90%;
@@ -376,6 +357,25 @@ main {
         justify-content: center;
         position: relative;
         background-color: transparent;
+    }
+
+    .input_area-show {
+        display: flex;
+    }
+    
+    #btn_close {
+        height: 30px;
+        width: 85%;
+        display: block;
+        background-color: transparent;
+        border-style: none;
+        cursor: pointer;
+    }
+            
+    #btn_close>img {
+        height: 20px;
+        width: 30px;
+        pointer-events: none
     }
 
     #img_btnDBMenu {
@@ -430,8 +430,14 @@ main {
         height: 25px;
         width: 25px;
         pointer-events: none;
+    }
 
-        display: block;
+    .btn_add2-show {
+        display: none !important;
+    }
+
+    #div_notice {
+        bottom: 50%;
     }
 }
 
