@@ -16,6 +16,8 @@ const input_area = document.querySelector(".input_area");
 const btn_add2 = document.querySelector("#btn_add2");
 const btn_close = document.querySelector("#btn_close");
 
+const div_notice = document.querySelector("#div_notice");
+
 let task = '';
 let priority = '';
 
@@ -37,8 +39,6 @@ window.onclick = function(event) {
     if (!event.target.matches('.btn_dropdownMenu')) {
         img_btnDBMenu.src = './img/arrow_down.png';
         let div = document.getElementsByClassName("div_dropdownMenu");
-        /* alert(div)
-        alert(div_dropdownMenu) */
         for (let i = 0; i < div.length; i++) {
             if (div[i].classList.contains('dropdownMenu_show')) {
                 div[i].classList.remove('dropdownMenu_show');
@@ -63,13 +63,13 @@ btn_dropdownItem3.addEventListener('click', () => {
 });
 
 btn_add2.addEventListener('click', () => {
-    btn_add2.style.display = 'none';
-    input_area.style.display = 'flex';
+    btn_add2.classList.add('btn_add2-show');
+    input_area.classList.add('input_area-show');
 });
 
 btn_close.addEventListener('click', () => {
-    input_area.style.display = 'none';
-    btn_add2.style.display = 'flex';
+    btn_add2.classList.remove('btn_add2-show');
+    input_area.classList.remove('input_area-show');
 });
 
 btn_add.addEventListener('click', () => {
@@ -125,7 +125,7 @@ btn_add.addEventListener('click', () => {
         ipt_checkbox.addEventListener('click', () => {
             if(ipt_checkbox.checked === true) {
                 p_text.style.textDecoration = 'line-through';
-                setTimeout(() => {
+                meter_rmElement = setTimeout(() => {
                     div_card.remove()
                     div_content_left.remove()
                     ipt_checkbox.remove()
@@ -135,9 +135,20 @@ btn_add.addEventListener('click', () => {
                     div_up.remove()
                     div_tag.remove()
                     lbl_tagName.remove()
+                    div_notice.textContent = 'Item deleted';
+                    div_notice.classList.add('div_notice-show');
+                    setTimeout(() => {
+                        div_notice.classList.remove('div_notice-show');
+                    }, 2000);
                 }, 2000);
             } else {
-                alert('no');
+                p_text.style.textDecoration = 'none';
+                clearTimeout(meter_rmElement)
+                div_notice.textContent = 'Withdraw delete';
+                div_notice.classList.add('div_notice-show');
+                setTimeout(() => {
+                    div_notice.classList.remove('div_notice-show');
+                }, 2000);
             }
         });
     } else if(ipt_task.value === '' && lbl_btnDBMenu.textContent === 'Please Select') {
